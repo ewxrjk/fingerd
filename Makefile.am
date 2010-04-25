@@ -14,7 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 sbin_PROGRAMS=trivial.fingerd
 trivial_fingerd_SOURCES=fingerd.c
-man_MANS=trivial.fingerd.8
+dist_man_MANS=trivial.fingerd.8
 EXTRA_DIST=autogen.sh fingerd.plist.in
 
 # launchd config for OS X systems
@@ -22,7 +22,7 @@ EXTRA_DIST=autogen.sh fingerd.plist.in
 all: fingerd.plist
 
 fingerd.plist: fingerd.plist.in Makefile
-	sed < fingerd.plist.in > fingerd.plist \
+	sed < ${srcdir}/fingerd.plist.in > fingerd.plist \
 		's,_sbindir_,${sbindir},g'
 
 install-data-local:
@@ -38,3 +38,6 @@ uninstall-local:
 	  echo rm -f /Library/LaunchDaemons/uk.org.greenend.fingerd.plist ;\
 	  rm -f /Library/LaunchDaemons/uk.org.greenend.fingerd.plist ;\
 	fi
+
+clean-local:
+	rm -f fingerd.plist
