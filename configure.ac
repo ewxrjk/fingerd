@@ -1,4 +1,4 @@
-AC_INIT([fingerd], [0.0+], [rjk@greenend.org.uk])
+AC_INIT([fingerd], [0.0], [rjk@greenend.org.uk])
 AC_CONFIG_AUX_DIR([config.aux])
 AM_INIT_AUTOMAKE([fingerd], [0.0])
 AC_CONFIG_SRCDIR([fingerd.c])
