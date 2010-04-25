@@ -165,7 +165,7 @@ int main(void) {
    * here, but this implementation does not support forwarding,
    * so we don't. */
   if(s[0] == '@') {
-    fputs("Forward is not supported, sorry.\r\n", stderr);
+    fputs("Forwarding is not supported, sorry.\r\n", stderr);
     return 0;
   }
   /* We'd better have reached the end of the line. */
