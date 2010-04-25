@@ -14,3 +14,4 @@ configure
 *.o
 stamp-h1
 trivial.fingerd
+fingerd.plist

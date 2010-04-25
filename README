@@ -4,12 +4,29 @@ trivial.fingerd
 This is a trivial finger server that reveals only very limited amounts
 of information.
 
-Installation:
+Installation (all platforms)
+----------------------------
+
    ./configure
    make
    sudo make install
 
-Then update your inetd.conf (or similar) to run on TCP port 79.  For
-example:
+inetd configuration (Linux etc)
+-------------------------------
+
+Add the following line to your /etc/inetd.conf:
 
 finger stream tcp nowait nobody.nogroup /usr/local/sbin/trivial.fingerd /usr/local/sbin/trivial.fingerd
+
+Then restart or reload inetd.
+
+launchd configuraiton (OS X)
+----------------------------
+
+'make install' will install a suitable plist into
+/Library/LaunchDaemons.  To enable it you must use launchctl:
+
+$ sudo launchctl load /Library/LaunchDaemons/uk.org.greenend.fingerd.plist
+
+To disable it do the same but with 'unload'.  'make uninstall' will
+also perform this step.
