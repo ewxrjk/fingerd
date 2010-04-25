@@ -1,0 +1,42 @@
+.TH trivial.fingerd 8
+.SH NAME
+trivial.fingerd \- small featureless finger daemon
+.SH SYNOPSIS
+.B trivial.fingerd
+.SH DESCRIPTION
+.B trivial.fingerd
+is a server for the finger protocol.
+.PP
+This implementation will reveal only the following things:
+.IP \(bu 2
+Whether the specified username exists or not.
+.IP \(bu
+The user's real name.
+.IP \(bu
+The contents of the user's
+.I .project
+file, if it exists.
+.IP \(bu
+The contents of the user's
+.I .plan
+file, if it exists.
+.PP
+It will not reveal the following:
+.IP \(bu 4
+A list of all logged-on users.
+.IP \(bu
+Whether a user is logged on, or details such as where they logged on
+from, their idle time, etc.
+.IP \(bu
+A user's home directory or shell.
+.IP \(bu
+A user's mail forwarding arrangements.
+.PP
+It will never forward finger requests to another host.
+.SH INSTALLATION
+.B trivial.fingerd
+expects to be run from
+.BR inetd (8)
+or similar and will refuse to run as root.
+.SH AUTHOR
+Richard Kettlewell <rjk@greenend.org.uk>

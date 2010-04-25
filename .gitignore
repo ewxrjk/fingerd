@@ -1,0 +1,16 @@
+.deps
+INSTALL
+Makefile
+Makefile.in
+*~
+aclocal.m4
+autom4te.cache
+config.aux
+config.h
+config.h.in
+config.log
+config.status
+configure
+*.o
+stamp-h1
+trivial.fingerd

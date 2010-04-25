@@ -1,0 +1,15 @@
+trivial.fingerd
+===============
+
+This is a trivial finger server that reveals only very limited amounts
+of information.
+
+Installation:
+   ./configure
+   make
+   sudo make install
+
+Then update your inetd.conf (or similar) to run on TCP port 79.  For
+example:
+
+finger stream tcp nowait nobody.nogroup /usr/local/sbin/trivial.fingerd /usr/local/sbin/trivial.fingerd
