@@ -22,7 +22,7 @@ finger stream tcp nowait nobody.nogroup /usr/local/sbin/trivial.fingerd /usr/loc
 
 Then restart or reload inetd.
 
-launchd configuraiton (OS X)
+launchd configuration (OS X)
 ----------------------------
 
 'make install' will install a suitable plist into
