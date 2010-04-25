@@ -12,9 +12,9 @@ dnl GNU General Public License for more details.
 dnl
 dnl You should have received a copy of the GNU General Public License
 dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
-AC_INIT([fingerd], [0.0+], [rjk@greenend.org.uk])
+AC_INIT([trivialfingerd], [0.0+], [rjk@greenend.org.uk])
 AC_CONFIG_AUX_DIR([config.aux])
-AM_INIT_AUTOMAKE([fingerd], [0.0+])
+AM_INIT_AUTOMAKE([trivialfingerd], [0.0+])
 AC_CONFIG_SRCDIR([fingerd.c])
 AM_CONFIG_HEADER([config.h])
 AC_PROG_CC
