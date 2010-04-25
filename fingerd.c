@@ -148,7 +148,7 @@ int main(void) {
     } else if(s[0] == '\r' && s[1] == '\n')
       ;
     else {
-      fputs("malformed finger query\n", stderr);
+      fputs("Malformed query.\n", stderr);
       return -1;
     }
   }
@@ -164,14 +164,20 @@ int main(void) {
   /* Queries might contain a @hostname sequence, which we would check
    * here, but this implementation does not support forwarding,
    * so we don't. */
+  if(s[0] == '@') {
+    fputs("Forward is not supported, sorry.\r\n", stderr);
+    return 0;
+  }
+  /* We'd better have reached the end of the line. */
   if(!(s[0] == '\r' && s[1] == '\n')) {
-    fputs("Malformed or unsupported query\n", stderr);
+    fputs("Malformed query.\n", stderr);
     return -1;
   }
   /* For now we don't support enumeration of logged-in users.  This
    * could be supported but still seems like a privacy violation. */
   if(!*user) {
-    fputs("Unsupported query\n", stderr);
+    fputs("User enumeration is not supported, sorry.\n", stderr);
+    return -1;
   }
   const struct passwd *pw = getpwnam(user);
   if(!pw) {
