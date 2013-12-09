@@ -123,7 +123,6 @@ static void show_file(const struct passwd *pw,
 int main(void) {
   char input[1024], user[sizeof input] = { 0 };
   const char *s;
-  int w = 0;
 
   /* We don't want to be root. */
   assert(getuid());
@@ -139,7 +138,6 @@ int main(void) {
   s = input;
   /* Queries may start with a /W */
   if(s[0] == '/' && s[1] == 'W') {
-    w = 1;
     s += 2;
     /* /W must be followed by spaces or CRLF */
     if(*s == ' ') {
