@@ -7,6 +7,9 @@ of information.
 Installation (all platforms)
 ----------------------------
 
+If you got it from git:
+   autoreconf -si
+In any case:
    ./configure
    make
    sudo make install

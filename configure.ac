@@ -1,4 +1,4 @@
-dnl Copyright (C) 2010 Richard Kettlewell
+dnl Copyright (C) 2010,13 Richard Kettlewell
 dnl
 dnl This program is free software: you can redistribute it and/or modify
 dnl it under the terms of the GNU General Public License as published by
@@ -14,7 +14,7 @@ dnl You should have received a copy of the GNU General Public License
 dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 AC_INIT([trivialfingerd], [0.0+], [rjk@greenend.org.uk])
 AC_CONFIG_AUX_DIR([config.aux])
-AM_INIT_AUTOMAKE([trivialfingerd], [0.0+])
+AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_SRCDIR([fingerd.c])
 AM_CONFIG_HEADER([config.h])
 AC_PROG_CC

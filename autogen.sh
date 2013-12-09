@@ -1,5 +1,5 @@
-#! /bin/bash
-# Copyright (C) 2010 Richard Kettlewell
+#! /bin/sh
+# Copyright (C) 2013 Richard Kettlewell
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,14 +14,4 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 set -e
-srcdir=$(dirname $0)
-here=$(pwd)
-cd $srcdir
-mkdir -p config.aux
-aclocal
-#libtoolize
-autoconf
-autoheader
-automake -a || true		# for INSTALL
-automake --foreign -a
-
+exec autoreconf -si
