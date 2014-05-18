@@ -1,6 +1,6 @@
 /*
  * Trivial finger server
- * Copyright (C) 2010 Richard Kettlewell
+ * Copyright (C) 2010, 2014 Richard Kettlewell
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,7 +86,7 @@ static int isuserchar(int c) {
   return 0;
 }
 
-static const char *make_full_path(const char *dir, const char *file) {
+static char *make_full_path(const char *dir, const char *file) {
   char *buffer = malloc(strlen(dir) + strlen(file) + 2);
   if(!buffer) {
     fputs("Out of memory\n", stderr);
@@ -101,8 +101,9 @@ static const char *make_full_path(const char *dir, const char *file) {
 static void show_file(const struct passwd *pw,
                       const char *heading,
                       const char *file) {
-  const char *full_path = make_full_path(pw->pw_dir, file);
+  char *full_path = make_full_path(pw->pw_dir, file);
   FILE *fp = fopen(full_path, "r");
+  free(full_path);
   if(!fp)
     return;
   printf("%s:\r\n", heading);
