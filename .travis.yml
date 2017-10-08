@@ -1,8 +1,17 @@
+os:
+- linux
+- osx
+
 dist: trusty
 language: c
 compiler:
 - clang
 - gcc
+
+matrix:
+  exclude:
+  - os: osx
+    compiler: gcc
 
 script:
 - autoreconf -si
